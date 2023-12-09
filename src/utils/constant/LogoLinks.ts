@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaDiscord, FaTelegram } from 'react-icons/fa'
 import { RiTwitterXLine, RiInstagramLine } from 'react-icons/ri'
 import { MdMail } from 'react-icons/md'
 
@@ -12,20 +12,32 @@ export const logoLinks = [
     name: 'Twitter',
     href: '',
     icon: RiTwitterXLine,
+    content: '',
   },
   {
     name: 'Instagram',
     href: '',
     icon: RiInstagramLine,
+    content: 'Radifa0_0',
   },
   {
-    name: 'LikedIn',
+    name: 'LinkedIn',
     href: '',
     icon: FaLinkedin,
   },
   {
-    name: 'Mail',
+    name: 'Gmail',
     href: '',
     icon: MdMail,
+  },
+  {
+    name: 'Discord',
+    href: '',
+    icon: FaDiscord,
+  },
+  {
+    name: 'Telegram',
+    href: '',
+    icon: FaTelegram,
   },
 ]
