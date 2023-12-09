@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IconContext } from 'react-icons'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { RiCloseFill } from 'react-icons/ri'
@@ -15,17 +15,30 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Education', href: '/education' },
     { name: 'Project', href: '/project' },
-    { name: 'Resume', href: '/resume' },
+    { name: 'Resume', href: '/cv.pdf' },
     { name: 'Contact', href: '/contact' },
   ]
+
+  const [navBg, setNavBg] = useState(false)
+
+  const changeNavBg = () => {
+    window.scrollY >= 100 ? setNavBg(true) : setNavBg(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavBg)
+    return () => {
+      window.removeEventListener('scroll', changeNavBg)
+    }
+  }, [])
 
   return (
     <nav
       className={twMerge(
-        `sticky top-0 z-10 flex items-center justify-between px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
+        `sticky top-0 z-10 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
+        navBg ? 'bg-white' : 'bg-transparent',
       )}
     >
-      <div className="h-10 w-10 bg-white"></div>
       <ul className="hidden gap-6 text-lg md:flex">
         {navLinks.map((link, index) => (
           <li
@@ -69,7 +82,7 @@ export default function Navbar() {
           ))}
           <div className="">
             <ul className="flex gap-4">
-              {logoLinks.map((link, index) => {
+              {logoLinks.slice(0, 5).map((link, index) => {
                 const Icon = link.icon
                 return (
                   <li key={index}>
