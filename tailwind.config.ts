@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+const withMT = require('@material-tailwind/react/utils/withMT')
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,6 +15,13 @@ const config: Config = {
         'primary-text': '#E2E8F0',
         'secondary-text': '#A0AEC0',
         'blue-sky': '#5FBDFF',
+        'black-primary': '#183153',
+        'yellow-primary': '#FFD43B',
+        'orange-primary': '#FAB007',
+      },
+      boxShadow: {
+        button: '0px 6px 0px 0px rgba(109,40,217)',
+        'button-card': '0px 6px 0px 0px #183153',
       },
       height: {
         fullscreen: '100dvh',
@@ -26,4 +35,4 @@ const config: Config = {
   },
   plugins: [],
 }
-export default config
+export default withMT(config)
