@@ -11,26 +11,29 @@ export default function Navbar() {
   const [isActive, setIsActive] = useState(false)
 
   const navLinks = [
-    { name: 'Home' },
-    { name: 'About' },
-    { name: 'Education' },
-    { name: 'Experience' },
-    { name: 'Project' },
-    { name: 'Resume' },
-    { name: 'Contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Education', href: '/education' },
+    { name: 'Project', href: '/project' },
+    { name: 'Resume', href: '/resume' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (
-    <nav className="relative flex items-center justify-between p-5 text-primary-text md:p-10">
+    <nav
+      className={twMerge(
+        `sticky top-0 z-10 flex items-center justify-between px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
+      )}
+    >
       <div className="h-10 w-10 bg-white"></div>
-      <ul className="hidden gap-6 text-lg font-light md:flex">
+      <ul className="hidden gap-6 text-lg md:flex">
         {navLinks.map((link, index) => (
           <li
             key={index}
-            className="group relative cursor-pointer font-normal hover:text-[#5FBDFF]"
+            className="group relative cursor-pointer font-semibold"
           >
-            <span className="absolute bottom-0 h-[2px] w-0 bg-[#5FBDFF] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-            <a href={`#${link.name.toLowerCase()}`}>{link.name}</a>
+            <span className="absolute bottom-0 h-1 w-0 rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            <a href={link.href}>{link.name}</a>
           </li>
         ))}
       </ul>
@@ -39,27 +42,29 @@ export default function Navbar() {
           onClick={() => {
             setIsActive(!isActive)
           }}
-          className="rounded-full bg-black p-1"
+          className="rounded-full border-2 bg-gray-100 p-1"
         >
-          <IconContext.Provider value={{ className: 'text-2xl text-white' }}>
+          <IconContext.Provider
+            value={{ className: 'text-4xl text-black-primary p-2' }}
+          >
             {isActive ? <RiCloseFill /> : <RxHamburgerMenu />}
           </IconContext.Provider>
         </button>
       </div>
       <div
         className={twMerge(
-          'absolute left-0 flex h-full w-full translate-y-16 justify-center rounded transition-all duration-300 ease-in-out md:hidden',
-          isActive ? '-translate-x-0' : 'translate-x-full',
+          'fixed top-12 flex h-full w-full justify-center overflow-x-hidden rounded transition-all duration-300 ease-in-out md:hidden',
+          isActive ? 'right-0' : '-right-full',
         )}
       >
-        <ul className="m-5 flex h-fit w-full flex-col items-center gap-8 rounded-xl bg-black px-3 py-6 text-lg font-light">
+        <ul className="m-5 flex h-fit w-full flex-col items-center gap-8 rounded-xl bg-gray-100 px-3 py-6 text-lg font-light">
           {navLinks.map((link, index) => (
             <li
               key={index}
-              className="hover:text-blue-sky group relative w-fit cursor-pointer font-normal"
+              className="group relative w-fit cursor-pointer font-semibold text-[#616D8A]"
             >
-              <span className="bg-blue-sky text-blue-sky absolute bottom-0 h-[2px] w-0 transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              <a href={`#${link.name.toLowerCase()}`}>{link.name}</a>
+              <span className="absolute bottom-0 h-1 w-0 rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              <a href={link.href}>{link.name}</a>
             </li>
           ))}
           <div className="">
@@ -70,7 +75,7 @@ export default function Navbar() {
                   <li key={index}>
                     <a href={link.href} target="_blank" rel="noreferrer">
                       <IconContext.Provider
-                        value={{ className: 'text-2xl text-white' }}
+                        value={{ className: 'text-2xl text-black-primary' }}
                       >
                         <Icon />
                       </IconContext.Provider>
