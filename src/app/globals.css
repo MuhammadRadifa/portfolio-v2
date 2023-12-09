@@ -1,9 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
-  font-family: 'Noto Sans Display', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  /* background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#d3d3d3 1.1px, transparent 1.1px),
+    radial-gradient(#d3d3d3 1.1px, #ffffff 1.1px);
+  background-size: 44px 44px;
+  background-position:
+    0 0,
+    22px 22px; */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('http://scarbroughstudios.com/img/codepen.svg');
+  z-index: -1;
+  opacity: 0.2;
 }
