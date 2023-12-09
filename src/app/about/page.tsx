@@ -1,20 +1,21 @@
 import HighlightText from '@/components/common/HighlightText'
 import TextSection from '@/components/common/TextSection'
 import Image from 'next/image'
+import { TechTabs } from '@/components/common/TechTabs'
 
 export default function About() {
   return (
-    <section className="text-primary-text">
+    <section className="text-black-primary">
       <TextSection text="it's More About Me." />
-      <div className="mx-auto mt-8 flex justify-center gap-10">
+      <div className="mx-auto mt-8 flex flex-col items-center justify-center md:gap-10 lg:flex-row">
         <Image
           src={'https://avatars.githubusercontent.com/muhammadradifa'}
           alt="Picture of the author"
           width={1000}
           height={1000}
-          className="aspect-auto w-96 rounded-lg object-cover"
+          className="aspect-auto w-full rounded-lg object-cover md:w-1/2 xl:w-96"
         />
-        <p className="w-1/2 text-justify text-lg text-secondary-text">
+        <p className="text-justify text-sm text-secondary-text md:text-base lg:w-1/2 xl:text-lg">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
           magni cupiditate, pariatur debitis ipsum ducimus totam nihil quos
           nulla quibusdam architecto. Modi, non exercitationem. Consequuntur
@@ -38,7 +39,13 @@ export default function About() {
           hic laudantium voluptatibus at.
         </p>
       </div>
-      <TextSection text="the Tech Stack That I Use." />
+      <TextSection
+        classNames="mt-10 xl:mt-28"
+        text="the Tech Stack That I Use."
+      />
+      <div className="mt-5 xl:px-40">
+        <TechTabs />
+      </div>
     </section>
   )
 }
