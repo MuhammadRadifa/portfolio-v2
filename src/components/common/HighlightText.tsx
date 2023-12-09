@@ -4,8 +4,8 @@ export default function HighlightText({
   children: React.ReactNode
 }) {
   return (
-    <div className="inline rounded-sm bg-white/30 p-1 text-primary-text backdrop-blur-sm">
+    <span className="text-black-primary bg-yellow-primary inline rounded-sm p-1 font-bold backdrop-blur-sm">
       {children}
-    </div>
+    </span>
   )
 }
