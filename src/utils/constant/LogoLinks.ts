@@ -5,7 +5,7 @@ import { MdMail } from 'react-icons/md'
 export const logoLinks = [
   {
     name: 'Github',
-    href: '',
+    href: 'https://github.com/MuhammadRadifa',
     icon: FaGithub,
   },
   {
@@ -16,13 +16,13 @@ export const logoLinks = [
   },
   {
     name: 'Instagram',
-    href: '',
+    href: 'https://www.instagram.com/radifa0_0/',
     icon: RiInstagramLine,
     content: 'Radifa0_0',
   },
   {
     name: 'LinkedIn',
-    href: '',
+    href: 'https://www.linkedin.com/in/radifa/',
     icon: FaLinkedin,
   },
   {
