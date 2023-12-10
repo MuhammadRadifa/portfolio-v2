@@ -26,7 +26,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('http://scarbroughstudios.com/img/codepen.svg');
+  background-image: url('/background.svg');
   z-index: -1;
   opacity: 0.2;
 }
