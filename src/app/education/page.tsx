@@ -44,9 +44,9 @@ export default function Education() {
                 {type}
               </p>
               <div className="flex gap-2">
-                <BiShow className="rounded-full border-2 border-black-primary bg-orange-primary p-2 text-4xl text-black-primary" />
-                <RiFileCopyLine className="rounded-full border-2 border-black-primary bg-orange-primary p-2 text-4xl text-black-primary" />
-                <IoLinkSharp className="rounded-full border-2 border-black-primary bg-orange-primary p-2 text-4xl text-black-primary" />
+                <BiShow className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
+                <RiFileCopyLine className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
+                <IoLinkSharp className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
               </div>
             </div>
           </div>
