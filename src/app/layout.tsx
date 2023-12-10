@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="overflow-x-hidden">
         <Navbar />
-        <main className="p-5 md:p-8">{children}</main>
+        <main className="mb-10 p-5 md:p-8">{children}</main>
         {/* <Footer /> */}
       </body>
     </html>
