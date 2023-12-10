@@ -27,10 +27,9 @@ export default function Home() {
         />
       </h2>
       <p className="max-w-lg text-center text-sm md:max-w-2xl md:text-left md:text-base">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, rem.
-        Quam rerum hic fugit fugiat, harum accusamus numquam a, quas, veritatis
-        perspiciatis! Praesentium consequuntur, neque incidunt qui distinctio
-        minus.
+        I am a <b>Junior Web Developer</b> from Indonesia, I have a strong
+        understanding of programming languages and web development and have
+        experience in <b>software development</b> projects.
       </p>
       <div className="flex gap-4">
         <a

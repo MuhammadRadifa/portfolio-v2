@@ -4,37 +4,44 @@ import foto1 from '@/assets/Project/foto1.png'
 import foto2 from '@/assets/Project/foto2.png'
 import foto3 from '@/assets/Project/foto3.png'
 import foto4 from '@/assets/Project/foto4.png'
+import foto5 from '@/assets/Project/foto5.png'
 
 export default function Project() {
   const data = [
     {
       title: 'Kalkulator Kesehatan',
       image: foto1,
-      deskripsi:
-        'Kalkulator kesehatan adalah aplikasi yang dapat menghitung berat badan ideal, kalori, dan kebutuhan air dalam sehari.',
+      deskripsi: 'app for calculating health, such as BMI, BMR, and others.',
       demo: 'https://kalkulator-kesehatan.netlify.app/',
       repo: 'https://github.com/MuhammadRadifa/kalkulator-kesehatan',
     },
     {
-      title: 'Restful API Perpustakaan',
+      title: 'Restful API - library',
       image: foto2,
       deskripsi:
-        'Restful API Perpustakaan adalah sebuah API yang digunakan untuk mengelola data buku pada perpustakaan.',
+        'library management system API is an API used to manage library systems',
       repo: 'https://github.com/MuhammadRadifa/API-Perpustakaan',
     },
     {
-      title: 'Restful API Forum',
+      title: 'Restful API - Social Media',
       image: foto3,
       deskripsi:
-        'Restful API Social Media adalah sebuah API yang digunakan untuk mengelola sistem forum',
+        'Social Media API is an API used to manage social media forum systems',
       repo: 'https://github.com/MuhammadRadifa/api-comunity-app',
     },
     {
       title: 'Learning Aja',
       image: foto4,
       deskripsi:
-        'Learning Aja adalah sebuah website yang digunakan untuk mengatur waktu kegiatan belajar.',
+        'Learning Aja is a website that provides learning materials for students.',
       repo: 'https://github.com/MuhammadRadifa/amba-ajar',
+    },
+    {
+      title: 'Portfolio-V1',
+      image: foto5,
+      deskripsi:
+        'my first portfolio website. built with nextJS and TailwindCSS',
+      repo: 'https://github.com/MuhammadRadifa/portfolio',
     },
   ]
   return (

@@ -22,6 +22,14 @@ export default function Education() {
     setCurrentImage(0)
     setIsViewerOpen(false)
   }
+
+  const handleClipboard = (href: string) => {
+    navigator.clipboard.writeText(href)
+  }
+
+  const handleLink = (href: string) => {
+    window.open(href, '_blank')
+  }
   return (
     <div className="xl:px-64">
       <TextSection
@@ -29,11 +37,10 @@ export default function Education() {
         classNames="mb-10 text-center"
       />
       <div className="flex flex-wrap items-center justify-center gap-5">
-        {certificates.map(({ title, company, type }, index) => (
+        {certificates.map(({ title, company, type, href }, index) => (
           <div
             key={index}
             className="flex h-40 w-full max-w-[288px] cursor-pointer flex-col justify-between rounded-xl border-2 border-black-primary bg-white p-4 shadow-button-card transition-all hover:scale-105 xl:w-72"
-            onClick={() => openImageViewer(index)}
           >
             <div>
               <h1 className="text-xl font-bold text-black-primary">{title}</h1>
@@ -44,9 +51,18 @@ export default function Education() {
                 {type}
               </p>
               <div className="flex gap-2">
-                <BiShow className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
-                <RiFileCopyLine className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
-                <IoLinkSharp className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary" />
+                <BiShow
+                  className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary"
+                  onClick={() => openImageViewer(index)}
+                />
+                <RiFileCopyLine
+                  className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary"
+                  onClick={() => handleClipboard(href)}
+                />
+                <IoLinkSharp
+                  className="rounded-full border-2 border-black-primary bg-yellow-primary p-2 text-4xl text-black-primary hover:bg-orange-primary"
+                  onClick={() => handleLink(href)}
+                />
               </div>
             </div>
           </div>

@@ -15,28 +15,16 @@ export default function About() {
           height={1000}
           className="aspect-auto w-full rounded-lg object-cover md:w-1/2 xl:w-96"
         />
-        <p className="text-justify text-sm text-secondary-text md:text-base lg:w-1/2 xl:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          magni cupiditate, pariatur debitis ipsum ducimus totam nihil quos
-          nulla quibusdam architecto. Modi, non exercitationem. Consequuntur
-          cumque rem aut quidem quisquam. Lorem, ipsum dolor sit amet{' '}
-          {<HighlightText>ini adalah</HighlightText>}
-          consectetur adipisicing elit. Itaque accusantium voluptatem facilis,
-          dolorem necessitatibus eos cumque nemo, hic sit cum aliquam vero sint
-          quam libero, repudiandae repellendus dolor aliquid porro. Lorem ipsum
-          dolor sit amet consectetur, adipisicing elit. Delectus excepturi
-          aspernatur, facilis repudiandae adipisci eum quae placeat fugiat quis
-          earum dolor est quas dolore consequatur inventore hic laudantium
-          voluptatibus at. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Temporibus magni cupiditate, pariatur debitis ipsum ducimus
-          totam nihil quos nulla quibusdam architecto. Modi, non exercitationem.
-          Itaque accusantium voluptatem facilis, dolorem necessitatibus eos
-          cumque nemo, hic sit cum aliquam vero sint quam libero,{' '}
-          {<HighlightText>repudiandae</HighlightText>} repellendus dolor aliquid
-          porro. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Delectus excepturi aspernatur, facilis repudiandae adipisci eum quae
-          placeat fugiat quis earum dolor est quas dolore consequatur inventore
-          hic laudantium voluptatibus at.
+        <p className="mt-5 text-justify text-base text-secondary-text md:mt-0 lg:w-1/2 xl:text-lg">
+          I am an <b>Informatics Engineering</b> student from STMIK Widya Cipta
+          Dharma, I have a strong understanding of programming languages and web
+          development and have experience in <b>software development</b>{' '}
+          projects. I have an interest and deepening my knowledge in the field
+          of <b>web development</b>.
+          <br />
+          <br />I have experience with <b>ReactJS</b> and <b>NextJS</b> for the
+          frontend and <b>NodeJS</b> for the backend. I also have experience
+          with <b>ExpressJS, AdonisJS</b> and <b>MySQL</b> for the backend.
         </p>
       </div>
       <TextSection
