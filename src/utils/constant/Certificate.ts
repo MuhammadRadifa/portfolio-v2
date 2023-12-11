@@ -10,6 +10,7 @@ import reactjs_sanber from '@/assets/certificate/react-sanbercode.png'
 import adonis_sanber from '@/assets/certificate/adonis-sanbercode.png'
 import laravel_sanber from '@/assets/certificate/laravel-sanbercode.png'
 import golang_sanber from '@/assets/certificate/golang-backend-sanbercode.png'
+import react_beginner from '@/assets/certificate/react-beginner-dicoding.png'
 
 import web_app_competition from '@/assets/certificate/web-unm.png'
 import web_lo from '@/assets/certificate/web-lokreatif.png'
@@ -116,7 +117,7 @@ export const certificates = [
   {
     title: 'React Beginner',
     company: 'dicoding',
-    image: javascript_fundamental,
+    image: react_beginner,
     href: 'https://www.dicoding.com/certificates/1RXYMJ6EMXVM',
     type: 'course',
   },
