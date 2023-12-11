@@ -28,5 +28,5 @@ body::before {
   height: 100vh;
   background-image: url('/background.svg');
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.35;
 }

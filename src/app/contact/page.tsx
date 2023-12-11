@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="xl:px-64">
       <TextSection text="Find Me On." classNames="mb-10" />
-      <div className="flex flex-row flex-wrap justify-center gap-10 xl:justify-start">
+      <div className="flex flex-row flex-wrap justify-center gap-10 2xl:justify-start">
         {logoLinks.map((data, index) => {
           const Icon = data.icon
           return (
