@@ -23,9 +23,9 @@ export default function About() {
           of <b>web development</b>.
           <br />
           <br />I have hands-on experience with <b>ReactJS</b> and <b>NextJS</b>{' '}
-          for the frontend, and <b>NodeJS</b> for the backend. Additionally, I
-          also using <b>ExpressJS</b>, <b>AdonisJS</b>, and <b>MySQL</b> for
-          backend development.
+          for the frontend, and <b>NodeJS</b> for the backend. I also using{' '}
+          <b>ExpressJS</b>, <b>AdonisJS</b>, and <b>MySQL</b> for backend
+          development.
         </p>
       </div>
       <TextSection
