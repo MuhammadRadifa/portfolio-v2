@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <nav
       className={twMerge(
-        `sticky top-0 z-10 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
+        `sticky top-0 z-50 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
         navBg ? 'md:bg-white md:shadow-lg' : 'bg-transparent',
       )}
     >

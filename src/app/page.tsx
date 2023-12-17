@@ -1,12 +1,18 @@
 'use client'
 
 import { TypeAnimation } from 'react-type-animation'
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-24 xl:items-start">
+    <div className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-16 xl:items-start 2xl:mt-24">
       <h1 className="text-3xl font-bold md:text-6xl">Muhammad Radifa</h1>
-      <h2 className="text-xl font-bold md:text-3xl">Hi, Folks</h2>
+      <h2 className="text-xl font-bold md:text-4xl">
+        Hi, Folks{' '}
+        <span className="hidden w-12 md:inline-block">
+          <Image src={'/wave.gif'} alt="welcome" width={100} height={100} />
+        </span>{' '}
+      </h2>
       <h2 className="text-xl font-bold md:text-3xl">
         I&apos;m{' '}
         <TypeAnimation
