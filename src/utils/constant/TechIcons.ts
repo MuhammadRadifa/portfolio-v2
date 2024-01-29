@@ -23,6 +23,8 @@ import {
   SiJetpackcompose,
 } from 'react-icons/si'
 
+import { TbBrandKotlin } from 'react-icons/tb'
+
 export const techIcons = {
   language: [
     {
@@ -43,7 +45,7 @@ export const techIcons = {
     },
     {
       name: 'Kotlin',
-      icons: SiKotlin,
+      icons: TbBrandKotlin,
     },
   ],
   framework: [
@@ -76,7 +78,7 @@ export const techIcons = {
       icons: SiTailwindcss,
     },
     {
-      name: 'Jetpack Compose',
+      name: 'Compose',
       icons: SiJetpackcompose,
     },
   ],

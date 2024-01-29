@@ -20,12 +20,12 @@ export default function About() {
           a strong understanding of programming languages and web development,
           along with hands-on experience in <b>software development</b>{' '}
           projects. My current focus is on deepening my knowledge in the field
-          of <b>web development</b>.
+          of <b>web & android development</b>.
           <br />
           <br />I have hands-on experience with <b>ReactJS</b> and <b>NextJS</b>{' '}
-          for the frontend, and <b>NodeJS</b> for the backend. I also using{' '}
-          <b>ExpressJS</b>, <b>AdonisJS</b>, and <b>MySQL</b> for backend
-          development.
+          for the frontend. and using <b>ExpressJS</b>, <b>AdonisJS</b> for
+          backend development. im also currently learning about <b>Kotlin</b>{' '}
+          for android development
         </p>
       </div>
       <TextSection
