@@ -9,6 +9,7 @@ export default function ProjectCard({
   deskripsi,
   repo,
   demo,
+  type,
 }: any) {
   function redirect(url: string) {
     window.open(url, '_blank')
@@ -48,7 +49,10 @@ export default function ProjectCard({
       <div className="dark:bg-dark-secondary absolute bottom-0 h-10 w-full border-t-2 border-black-primary bg-yellow-primary p-2 transition-all duration-300 group-hover:h-[60%] lg:group-hover:h-2/4 ">
         <div className="h-20">
           <h1 className="line-clamp-1 font-bold group-hover:line-clamp-2">
-            {title}
+            {title}{' '}
+            <span className="w-full rounded-lg bg-black p-1 text-xs text-white">
+              {type}
+            </span>
           </h1>
           <p className="hidden h-full text-xs font-normal group-hover:block">
             {deskripsi}

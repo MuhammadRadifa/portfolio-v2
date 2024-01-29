@@ -19,6 +19,8 @@ import {
   SiJest,
   SiMongodb,
   SiMysql,
+  SiKotlin,
+  SiJetpackcompose,
 } from 'react-icons/si'
 
 export const techIcons = {
@@ -38,6 +40,10 @@ export const techIcons = {
     {
       name: 'Golang',
       icons: BiLogoGoLang,
+    },
+    {
+      name: 'Kotlin',
+      icons: SiKotlin,
     },
   ],
   framework: [
@@ -70,8 +76,8 @@ export const techIcons = {
       icons: SiTailwindcss,
     },
     {
-      name: 'Bootstrap',
-      icons: SiBootstrap,
+      name: 'Jetpack Compose',
+      icons: SiJetpackcompose,
     },
   ],
   tools: [
