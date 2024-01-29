@@ -50,7 +50,7 @@ const data = [
     image: foto6,
     deskripsi: 'my first android app. built with kotlin jetpack compose',
     type: 'android',
-    repo: 'https://github.com/MuhammadRadifa/portfolio',
+    repo: 'https://github.com/MuhammadRadifa/news-app',
   },
 ]
 
