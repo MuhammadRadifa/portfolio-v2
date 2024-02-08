@@ -4,6 +4,7 @@ import foto3 from '@/assets/Project/foto3.png'
 import foto4 from '@/assets/Project/foto4.png'
 import foto5 from '@/assets/Project/foto5.png'
 import foto6 from '@/assets/Project/foto6.png'
+import foto7 from '@/assets/Project/foto7.png'
 
 const data = [
   {
@@ -51,6 +52,14 @@ const data = [
     deskripsi: 'my first android app. built with kotlin jetpack compose',
     type: 'android',
     repo: 'https://github.com/MuhammadRadifa/news-app',
+  },
+  {
+    title: 'Expense Tracker App',
+    image: foto7,
+    deskripsi:
+      'The Expense Tracker App is a user-friendly and efficient digital tool designed to empower individuals and businesses in managing their finances seamlessly',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/expense-tracker-app',
   },
 ]
 
