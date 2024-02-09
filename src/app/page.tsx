@@ -1,11 +1,21 @@
 'use client'
 
 import { TypeAnimation } from 'react-type-animation'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-16 xl:items-start 2xl:mt-24">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+      className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-16 xl:items-start 2xl:mt-24"
+    >
       <h1 className="text-3xl font-bold md:text-6xl">Muhammad Radifa</h1>
       <h2 className="text-xl font-bold md:text-4xl">
         Hi, Folks{' '}
@@ -69,6 +79,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
