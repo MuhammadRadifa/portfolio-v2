@@ -11,11 +11,26 @@ import adonis_sanber from '@/assets/certificate/adonis-sanbercode.png'
 import laravel_sanber from '@/assets/certificate/laravel-sanbercode.png'
 import golang_sanber from '@/assets/certificate/golang-backend-sanbercode.png'
 import react_beginner from '@/assets/certificate/react-beginner-dicoding.png'
+import kotlin_dicoding from '@/assets/certificate/Getting_Started_Programming_with_Kotlin.png'
+import solid_dicoding from '@/assets/certificate/SOLID_Programming_Principles.png'
+import beginner_android_android from '@/assets/certificate/android_beginner.png'
+import android_fundamental from '@/assets/certificate/fundamental_android_apps.png'
+import android_compose from '@/assets/certificate/jetpack_compose.png'
+import android_expert from '@/assets/certificate/android_expert.png'
 
 import web_app_competition from '@/assets/certificate/web-unm.png'
 import web_lo from '@/assets/certificate/web-lokreatif.png'
+import { StaticImageData } from 'next/image'
 
-export const certificates = [
+interface ICertificate {
+  title: string
+  company: string
+  image: StaticImageData
+  href: string
+  type: 'course' | 'competition' | 'competence'
+}
+
+export const certificates: Array<ICertificate> = [
   {
     title: '3rd Winner Web App Competition',
     company: 'Universitas Nusa Mandiri',
@@ -119,6 +134,48 @@ export const certificates = [
     company: 'dicoding',
     image: react_beginner,
     href: 'https://www.dicoding.com/certificates/1RXYMJ6EMXVM',
+    type: 'course',
+  },
+  {
+    title: 'Getting Started With Kotlin',
+    company: 'dicoding',
+    image: kotlin_dicoding,
+    href: 'https://www.dicoding.com/certificates/JLX12J9VNZ72',
+    type: 'course',
+  },
+  {
+    title: 'SOLID Programming Principles',
+    company: 'dicoding',
+    image: solid_dicoding,
+    href: 'https://www.dicoding.com/certificates/0LZ02WKK0X65',
+    type: 'course',
+  },
+  {
+    title: 'Android Beginner',
+    company: 'dicoding',
+    image: beginner_android_android,
+    href: 'https://www.dicoding.com/certificates/81P2VJKGOPOY',
+    type: 'course',
+  },
+  {
+    title: 'Fundamental Android Apps',
+    company: 'dicoding',
+    image: android_fundamental,
+    href: 'https://www.dicoding.com/certificates/QLZ94L9GDP5D',
+    type: 'course',
+  },
+  {
+    title: 'Android With Jetpack Compose',
+    company: 'dicoding',
+    image: android_compose,
+    href: 'https://www.dicoding.com/certificates/ERZR1M2JWZYV',
+    type: 'course',
+  },
+  {
+    title: 'Android Expert',
+    company: 'dicoding',
+    image: android_expert,
+    href: 'https://www.dicoding.com/certificates/72ZDV999VZYW',
     type: 'course',
   },
 ]
