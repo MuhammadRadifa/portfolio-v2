@@ -29,9 +29,9 @@ export default function Home() {
           sequence={[
             'Junior Web Developer',
             5000,
-            'Frontend Web Developer',
+            'Mobile Developer',
             5000,
-            'Backend Web Developer',
+            'Fullstack Developer',
             5000,
           ]}
           wrapper="span"
@@ -43,9 +43,9 @@ export default function Home() {
         />
       </h2>
       <p className="max-w-lg text-center text-sm md:max-w-2xl md:text-left md:text-base">
-        I am a <b>Junior Web Developer</b> from Indonesia, I have a strong
-        understanding of programming languages and web development and have
-        experience in <b>software development</b> projects.
+        I am a <b>Fullstack Developer</b> from Indonesia, I have a strong
+        understanding of programming languages and have experience in{' '}
+        <b>Mobile And Web Developer</b> projects.
       </p>
       <div className="flex gap-4">
         <a
