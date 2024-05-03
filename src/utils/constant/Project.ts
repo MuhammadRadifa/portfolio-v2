@@ -5,6 +5,11 @@ import foto4 from '@/assets/Project/foto4.png'
 import foto5 from '@/assets/Project/foto5.png'
 import foto6 from '@/assets/Project/foto6.png'
 import foto7 from '@/assets/Project/foto7.png'
+import foto8 from '@/assets/Project/foto8.png'
+import foto9 from '@/assets/Project/foto9.png'
+import foto10 from '@/assets/Project/foto10.png'
+import foto11 from '@/assets/Project/foto11.png'
+import foto12 from '@/assets/Project/foto12.png'
 
 const data = [
   {
@@ -20,7 +25,7 @@ const data = [
     image: foto2,
     deskripsi:
       'library management system API is an API used to manage library systems',
-    type: 'web',
+    type: 'api',
     repo: 'https://github.com/MuhammadRadifa/API-Perpustakaan',
   },
   {
@@ -28,7 +33,7 @@ const data = [
     image: foto3,
     deskripsi:
       'Social Media API is an API used to manage social media forum systems',
-    type: 'web',
+    type: 'api',
     repo: 'https://github.com/MuhammadRadifa/api-comunity-app',
   },
   {
@@ -60,6 +65,42 @@ const data = [
       'The Expense Tracker App is a user-friendly and efficient digital tool designed to empower individuals and businesses in managing their finances seamlessly',
     type: 'android',
     repo: 'https://github.com/MuhammadRadifa/expense-tracker-app',
+  },
+  {
+    title: 'Github User',
+    image: foto8,
+    deskripsi: 'Github User is an application to search for github users',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/github-user',
+  },
+  {
+    title: 'Cancer Detection',
+    image: foto9,
+    deskripsi: 'Cancer Detection is an application to detect cancer cells',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/cancer-detection',
+  },
+  {
+    title: 'Story App',
+    image: foto10,
+    deskripsi: 'Story App is an application to read stories',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/story-app',
+  },
+  {
+    title: 'World Countries',
+    image: foto11,
+    deskripsi:
+      'World Countries is an application to search for countries in the world',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/world-countries',
+  },
+  {
+    title: 'Restaurants Finder',
+    image: foto12,
+    deskripsi: 'Restaurants Finder is an application to find restaurants',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/restaurant-finder',
   },
 ]
 
