@@ -12,7 +12,7 @@ import foto11 from '@/assets/Project/foto11.png'
 import foto12 from '@/assets/Project/foto12.png'
 import foto13 from '@/assets/Project/foto13.png'
 import adonis from '@/assets/Project/adonis.png'
-import expressSockect from '@/assets/Project/expressSocket.png'
+import expressSockect from '@/assets/Project/ExpressSocket.png'
 import laravel from '@/assets/Project/laravel.png'
 import { StaticImageData } from 'next/image'
 
