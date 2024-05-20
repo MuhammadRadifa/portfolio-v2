@@ -10,8 +10,22 @@ import foto9 from '@/assets/Project/foto9.png'
 import foto10 from '@/assets/Project/foto10.png'
 import foto11 from '@/assets/Project/foto11.png'
 import foto12 from '@/assets/Project/foto12.png'
+import foto13 from '@/assets/Project/foto13.png'
+import adonis from '@/assets/Project/adonis.png'
+import expressSockect from '@/assets/Project/expressSocket.png'
+import laravel from '@/assets/Project/laravel.png'
+import { StaticImageData } from 'next/image'
 
-const data = [
+export interface IProject {
+  title: string
+  image: StaticImageData
+  deskripsi: string
+  type: string
+  demo?: string
+  repo: string
+}
+
+const data: Array<IProject> = [
   {
     title: 'Kalkulator Kesehatan',
     image: foto1,
@@ -22,7 +36,7 @@ const data = [
   },
   {
     title: 'Restful API - library',
-    image: foto2,
+    image: adonis,
     deskripsi:
       'library management system API is an API used to manage library systems',
     type: 'api',
@@ -30,7 +44,7 @@ const data = [
   },
   {
     title: 'Restful API - Social Media',
-    image: foto3,
+    image: expressSockect,
     deskripsi:
       'Social Media API is an API used to manage social media forum systems',
     type: 'api',
@@ -101,6 +115,21 @@ const data = [
     deskripsi: 'Restaurants Finder is an application to find restaurants',
     type: 'android',
     repo: 'https://github.com/MuhammadRadifa/restaurant-finder',
+  },
+  {
+    title: 'Contact Management Api',
+    image: laravel,
+    deskripsi: 'Contact Management Api is an API to manage contacts',
+    type: 'api',
+    repo: 'https://github.com/MuhammadRadifa/contact-management-api',
+  },
+  {
+    title: 'Quiz Kit App',
+    image: foto13,
+    deskripsi: 'Quiz Kit App is an application to play quizzes',
+    type: 'android',
+    repo: 'https://github.com/MuhammadRadifa/QuizKit',
+    demo: 'https://www.youtube.com/watch?v=EW0K2y9Dhpk',
   },
 ]
 
