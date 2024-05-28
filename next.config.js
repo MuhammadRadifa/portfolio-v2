@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '/muhammadradifa',
       },
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+        port: '',
+        pathname: '/thumbnail',
+      },
     ],
   },
 }

@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.5",
+    "axios": "^1.7.2",
     "framer-motion": "^11.0.3",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-simple-image-viewer": "^1.2.2",
     "react-type-animation": "^3.2.0",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -2,35 +2,22 @@
 
 import ProjectCard from '@/components/common/ProjectCard'
 import TextSection from '@/components/common/TextSection'
-import data, { IProject } from '@/utils/constant/Project'
-import foto1 from '@/assets/Project/foto1.png'
-import { useEffect, useState } from 'react'
+
+import { useState } from 'react'
+import useSWR from 'swr'
+import { fetcher } from '@/utils/service/Fetcher'
+import { IProject } from '@/utils/constant/Project'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Project() {
   const [filter, setFilter] = useState('all')
-  const [project, setProject] = useState<Array<IProject>>([
-    {
-      title: 'Loading ...',
-      image: foto1,
-      deskripsi: 'Loading ...',
-      type: 'loading',
-      repo: '',
-    },
-  ])
 
-  useEffect(() => {
-    if (filter === 'all') {
-      setProject(data)
-    } else if (filter === 'mobile') {
-      setProject(
-        data.filter((item) =>
-          ['android', 'ios', 'flutter'].includes(item.type),
-        ),
-      )
-    } else {
-      setProject(data.filter((item) => item.type === filter))
-    }
-  }, [filter])
+  const { data, isLoading, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL as string}/project`,
+    fetcher,
+    { revalidateOnFocus: false, revalidateOnReconnect: false },
+  )
 
   return (
     <div className="">
@@ -46,7 +33,13 @@ export default function Project() {
                 filter == 'all' ? 'w-full' : 'w-0'
               } rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full`}
             ></span>
-            <p>All {filter == 'all' && `(${data.length})`}</p>
+            <p>
+              All{' '}
+              {!isLoading &&
+                !error &&
+                filter == 'all' &&
+                `(${!isLoading && data?.data.length})`}
+            </p>
           </button>
           <button
             className={`group relative flex flex-col items-start justify-center`}
@@ -59,8 +52,13 @@ export default function Project() {
             ></span>
             <p>
               Web{' '}
-              {filter == 'web' &&
-                `(${data.filter((item) => item.type === 'api').length})`}
+              {!isLoading &&
+                !error &&
+                filter == 'web' &&
+                `(${
+                  data.data.filter((item: IProject) => item.type === 'web')
+                    .length
+                })`}
             </p>
           </button>
           <button
@@ -76,8 +74,8 @@ export default function Project() {
               Mobile{' '}
               {filter == 'mobile' &&
                 `(${
-                  data.filter((item) =>
-                    ['android', 'ios', 'flutter'].includes(item.type),
+                  data.data.filter((item: IProject) =>
+                    ['android', 'ios', 'flutter', 'mobile'].includes(item.type),
                   ).length
                 })`}
             </p>
@@ -93,19 +91,47 @@ export default function Project() {
             ></span>
             <p>
               Api{' '}
-              {filter == 'api' &&
-                `(${data.filter((item) => item.type === 'api').length})`}
+              {!isLoading &&
+                !error &&
+                filter == 'api' &&
+                `(${
+                  data.data.filter((item: IProject) => item.type === 'api')
+                    .length
+                })`}
             </p>
           </button>
         </div>
       </div>
       <div className="mb-2 mt-6 flex w-full flex-wrap justify-center gap-4 sm:mb-4 md:mb-5 lg:mb-6 lg:gap-6">
-        {project.length != 1 &&
-          project
+        {!isLoading &&
+          !error &&
+          data.data
             .slice(0)
             .reverse()
-            .map((item, index) => <ProjectCard {...item} key={index} />)}
-        {project.length == 1 && <p className="text-center">Loading ...</p>}
+            .filter((item: IProject) => {
+              if (filter === 'all') return true
+              if (filter === 'mobile')
+                return ['android', 'ios', 'flutter', 'mobile'].includes(
+                  item.type,
+                )
+              if (filter === 'web') return item.type === 'web'
+              if (filter === 'api') return item.type === 'api'
+              return item.type === filter
+            })
+            .map((item: IProject, index: Number) => (
+              <ProjectCard {...item} key={index} />
+            ))}
+        {isLoading && (
+          <div className="flex w-3/4 flex-row items-center justify-center">
+            <Skeleton
+              height={160}
+              width={320}
+              count={12}
+              containerClassName="flex gap-2 flex-row items-center justify-center w-full flex-wrap"
+            />
+          </div>
+        )}
+        {error && <p className="text-center">Error ...</p>}
       </div>
     </div>
   )
