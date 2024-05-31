@@ -6,7 +6,7 @@ import TextSection from '@/components/common/TextSection'
 import { useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/service/Fetcher'
-import { IProject } from '@/utils/constant/Project'
+import { IProject } from '@/utils/interface/Project'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 

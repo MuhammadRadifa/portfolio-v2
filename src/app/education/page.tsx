@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react'
 import ImageViewer from 'react-simple-image-viewer'
-import { ICertificate } from '@/utils/constant/Certificate'
+import { ICertificate } from '@/utils/interface/Certificate'
 import { motion } from 'framer-motion'
 import { RiFileCopyLine } from 'react-icons/ri'
 import { BiShow } from 'react-icons/bi'
