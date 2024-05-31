@@ -3,7 +3,7 @@
 import { useCallback, useState } from 'react'
 import ImageViewer from 'react-simple-image-viewer'
 import { ICertificate } from '@/utils/constant/Certificate'
-
+import { motion } from 'framer-motion'
 import { RiFileCopyLine } from 'react-icons/ri'
 import { BiShow } from 'react-icons/bi'
 import { IoLinkSharp } from 'react-icons/io5'
@@ -52,8 +52,11 @@ export default function Education() {
           !error &&
           data.data?.map(
             ({ title, company, type, href }: ICertificate, index: number) => (
-              <div
+              <motion.div
                 key={index}
+                whileInView={{ scale: 1 }}
+                initial={{ scale: 0 }}
+                transition={{ duration: 0.3 }}
                 className="flex h-40 w-full max-w-[288px] cursor-pointer flex-col justify-between rounded-xl border-2 border-black-primary bg-white p-4 shadow-button-card transition-all hover:scale-105 xl:w-72"
               >
                 <div>
@@ -81,7 +84,7 @@ export default function Education() {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ),
           )}
         {isLoading && (

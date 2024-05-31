@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 export default function ProjectCard({
   image,
@@ -12,7 +13,12 @@ export default function ProjectCard({
   type,
 }: any) {
   return (
-    <div className="dark:border-dark-secondary group relative h-36 w-[280px] cursor-pointer overflow-hidden rounded-lg  border-2 border-black-primary object-cover shadow-button-card sm:w-[360px] lg:h-44">
+    <motion.div
+      whileInView={{ scale: 1 }}
+      initial={{ scale: 0 }}
+      transition={{ duration: 0.3 }}
+      className="dark:border-dark-secondary group relative h-36 w-[280px] cursor-pointer overflow-hidden rounded-lg  border-2 border-black-primary object-cover shadow-button-card sm:w-[360px] lg:h-44"
+    >
       <Image
         src={`https://drive.google.com/thumbnail?id=${image}&sz=w3000`}
         width={1000}
@@ -53,6 +59,6 @@ export default function ProjectCard({
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
