@@ -22,6 +22,7 @@ const config: Config = {
       boxShadow: {
         button: '0px 6px 0px 0px rgba(109,40,217)',
         'button-card': '0px 6px 0px 0px #183153',
+        'image-card': '-6px 8px 0px 0px rgba(109,40,217)',
       },
       height: {
         fullscreen: '100dvh',
