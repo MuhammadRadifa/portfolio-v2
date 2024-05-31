@@ -1,8 +1,26 @@
+'use client'
+
 import TextSection from '@/components/common/TextSection'
 import Image from 'next/image'
-import { TechTabs } from '@/components/common/TechTabs'
+import { twMerge } from 'tailwind-merge'
+import { techIcons } from '@/utils/constant/TechIcons'
+import { animate, motion } from 'framer-motion'
 
 export default function About() {
+  const fadeInAnimationVariants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.05 * index,
+      },
+    }),
+  }
+
   return (
     <section className="text-black-primary">
       <TextSection text="it's More About Me." />
@@ -32,8 +50,30 @@ export default function About() {
         classNames="mt-10 xl:mt-28"
         text="the Tech Stack That I Use."
       />
-      <div className="mt-5 xl:px-40">
-        <TechTabs />
+      <div className="mt-5 grid grid-cols-3 justify-items-center gap-2 sm:grid-cols-3 xl:grid-cols-6 xl:gap-y-6 xl:px-40">
+        {/* <TechTabs /> */}
+        {techIcons.map((data, index) => {
+          const Icons = data.icons
+          return (
+            <motion.div
+              key={index}
+              initial="hidden"
+              whileInView="animate"
+              variants={fadeInAnimationVariants}
+              custom={index}
+              className={twMerge(
+                `flex h-28 w-28 flex-col items-center justify-center gap-y-2 rounded-2xl border-2 bg-white duration-150 hover:scale-105 hover:border-black-primary hover:shadow-button-card md:h-36 md:w-36 md:p-4`,
+              )}
+            >
+              <Icons
+                className={twMerge(`text-4xl text-black-primary md:text-6xl`)}
+              />
+              <p className="text-base font-bold text-black-primary md:text-xl">
+                {data.name}
+              </p>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )

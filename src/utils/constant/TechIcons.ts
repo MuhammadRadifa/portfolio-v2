@@ -19,93 +19,84 @@ import {
   SiJest,
   SiMongodb,
   SiMysql,
-  SiKotlin,
+  SiFramer,
   SiJetpackcompose,
 } from 'react-icons/si'
 
 import { TbBrandKotlin } from 'react-icons/tb'
 
-export const techIcons = {
-  language: [
-    {
-      name: 'JavaScript',
-      icons: BiLogoJavascript,
-    },
-    {
-      name: 'TypeScript',
-      icons: BiLogoTypescript,
-    },
-    {
-      name: 'Php',
-      icons: SiPhp,
-    },
-    {
-      name: 'Golang',
-      icons: BiLogoGoLang,
-    },
-    {
-      name: 'Kotlin',
-      icons: TbBrandKotlin,
-    },
-  ],
-  framework: [
-    {
-      name: 'React',
-      icons: BiLogoReact,
-    },
-    {
-      name: 'NextJS',
-      icons: SiNextdotjs,
-    },
-    {
-      name: 'Laravel',
-      icons: SiLaravel,
-    },
-    {
-      name: 'Express',
-      icons: SiExpress,
-    },
-    {
-      name: 'AdonisJs',
-      icons: SiAdonisjs,
-    },
-    {
-      name: 'NodeJS',
-      icons: BiLogoNodejs,
-    },
-    {
-      name: 'Tailwinds',
-      icons: SiTailwindcss,
-    },
-    {
-      name: 'Compose',
-      icons: SiJetpackcompose,
-    },
-  ],
-  tools: [
-    {
-      name: 'Git',
-      icons: SiGit,
-    },
-    {
-      name: 'Postman',
-      icons: SiPostman,
-    },
-    {
-      name: 'Jest',
-      icons: SiJest,
-    },
-    {
-      name: 'MongoDB',
-      icons: SiMongodb,
-    },
-    {
-      name: 'MySQL',
-      icons: SiMysql,
-    },
-    {
-      name: 'PostgreSQL',
-      icons: BiLogoPostgresql,
-    },
-  ],
-}
+export const techIcons = [
+  {
+    name: 'JavaScript',
+    icons: BiLogoJavascript,
+  },
+  {
+    name: 'TypeScript',
+    icons: BiLogoTypescript,
+  },
+  {
+    name: 'Php',
+    icons: SiPhp,
+  },
+  {
+    name: 'Golang',
+    icons: BiLogoGoLang,
+  },
+  {
+    name: 'Kotlin',
+    icons: TbBrandKotlin,
+  },
+
+  {
+    name: 'React',
+    icons: BiLogoReact,
+  },
+  {
+    name: 'NextJS',
+    icons: SiNextdotjs,
+  },
+  {
+    name: 'Laravel',
+    icons: SiLaravel,
+  },
+  {
+    name: 'Express',
+    icons: SiExpress,
+  },
+  {
+    name: 'AdonisJs',
+    icons: SiAdonisjs,
+  },
+  {
+    name: 'NodeJS',
+    icons: BiLogoNodejs,
+  },
+  {
+    name: 'Tailwinds',
+    icons: SiTailwindcss,
+  },
+  {
+    name: 'Compose',
+    icons: SiJetpackcompose,
+  },
+  {
+    name: 'Framer',
+    icons: SiFramer,
+  },
+  {
+    name: 'Jest',
+    icons: SiJest,
+  },
+  {
+    name: 'MongoDB',
+    icons: SiMongodb,
+  },
+  {
+    name: 'MySQL',
+    icons: SiMysql,
+  },
+  {
+    name: 'PostgreSQL',
+    icons: BiLogoPostgresql,
+  },
+]
