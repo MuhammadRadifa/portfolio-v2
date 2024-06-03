@@ -13,6 +13,7 @@
     "axios": "^1.7.2",
     "framer-motion": "^11.0.3",
     "next": "14.0.3",
+    "gsap": "^3.12.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",

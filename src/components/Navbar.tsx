@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { RiCloseFill } from 'react-icons/ri'
 import { twMerge } from 'tailwind-merge'
 import { logoLinks } from '@/utils/constant/LogoLinks'
+import TransitionLink from './common/transitionLink'
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false)
@@ -35,19 +36,13 @@ export default function Navbar() {
   return (
     <nav
       className={twMerge(
-        `sticky top-0 z-50 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
+        `sticky top-0 z-10 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
         navBg ? 'md:bg-white md:shadow-lg' : 'bg-transparent',
       )}
     >
       <ul className="hidden gap-6 text-lg md:flex">
         {navLinks.map((link, index) => (
-          <li
-            key={index}
-            className="group relative cursor-pointer font-semibold"
-          >
-            <span className="absolute bottom-0 h-1 w-0 rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
-            <a href={link.href}>{link.name}</a>
-          </li>
+          <TransitionLink key={index} href={link.href} label={link.name} />
         ))}
       </ul>
       <div className="flex md:hidden">
