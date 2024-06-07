@@ -7,9 +7,17 @@ import { RiCloseFill } from 'react-icons/ri'
 import { twMerge } from 'tailwind-merge'
 import { logoLinks } from '@/utils/constant/LogoLinks'
 import TransitionLink from './common/transitionLink'
+import { Tooltip } from '@material-tailwind/react'
+import { usePathname, useRouter } from 'next/navigation'
+import { animatePageOut } from '@/utils/animation/animatePage'
+
+type Routes = '/about' | '/education' | '/project'
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false)
+
+  const pathName = usePathname()
+  const router = useRouter()
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -19,6 +27,12 @@ export default function Navbar() {
     { name: 'Resume', href: '/cv.pdf' },
     { name: 'Contact', href: '/contact' },
   ]
+
+  const navigationRoutes = {
+    '/about': '/education',
+    '/education': '/project',
+    '/project': '/cv.pdf',
+  }
 
   const [navBg, setNavBg] = useState(false)
 
@@ -36,15 +50,103 @@ export default function Navbar() {
   return (
     <nav
       className={twMerge(
-        `sticky top-0 z-10 flex items-center justify-end px-5 py-3 text-[#616D8A] md:px-10 md:py-5`,
-        navBg ? 'md:bg-white md:shadow-lg' : 'bg-transparent',
+        `sticky top-0 z-10 flex items-center justify-end bg-transparent px-5 py-3 text-[#616D8A] duration-200 md:px-10 md:py-5`,
+        navBg && 'md:justify-center md:py-2',
       )}
     >
-      <ul className="hidden gap-6 text-lg md:flex">
+      <ul
+        className={twMerge(
+          'hidden gap-6 text-lg md:flex',
+          navBg &&
+            'gap-4 rounded-xl border-2 border-black-primary bg-white p-4 text-black-primary shadow-nav-card',
+        )}
+      >
         {navLinks.map((link, index) => (
           <TransitionLink key={index} href={link.href} label={link.name} />
         ))}
       </ul>
+      {navBg && (
+        <div
+          onClick={() => {
+            animatePageOut(navigationRoutes[pathName as Routes], router)
+          }}
+          className={twMerge(
+            'fixed top-0 my-4 hidden h-16 w-16 -rotate-120 cursor-pointer rounded-full border-4 border-black-primary bg-yellow-primary duration-150 hover:-rotate-90 md:right-16 md:block',
+            // !isProject
+            //   ? '-rotate-120 hover:-rotate-90 md:right-16'
+            //   : 'rotate-120 hover:rotate-90 md:left-16',
+          )}
+        >
+          <Tooltip
+            content={`Next Page`}
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="p-2"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="black"
+                strokeLinecap="round"
+                strokeWidth={2}
+              >
+                <path
+                  strokeDasharray="2 4"
+                  strokeDashoffset={6}
+                  d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    dur="0.6s"
+                    repeatCount="indefinite"
+                    values="6;0"
+                  ></animate>
+                </path>
+                <path
+                  strokeDasharray={30}
+                  strokeDashoffset={30}
+                  d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3"
+                >
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="0.1s"
+                    dur="0.3s"
+                    values="30;0"
+                  ></animate>
+                </path>
+                <path strokeDasharray={10} strokeDashoffset={10} d="M12 8v7.5">
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="0.5s"
+                    dur="0.2s"
+                    values="10;0"
+                  ></animate>
+                </path>
+                <path
+                  strokeDasharray={6}
+                  strokeDashoffset={6}
+                  d="M12 15.5l3.5 -3.5M12 15.5l-3.5 -3.5"
+                >
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="0.7s"
+                    dur="0.2s"
+                    values="6;0"
+                  ></animate>
+                </path>
+              </g>
+            </svg>
+          </Tooltip>
+        </div>
+      )}
       <div className="flex md:hidden">
         <button
           onClick={() => {
