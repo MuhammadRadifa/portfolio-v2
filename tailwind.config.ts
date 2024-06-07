@@ -22,7 +22,8 @@ const config: Config = {
       boxShadow: {
         button: '0px 6px 0px 0px rgba(109,40,217)',
         'button-card': '0px 6px 0px 0px #183153',
-        'image-card': '-6px 8px 0px 0px rgba(109,40,217)',
+        'image-card': '-6px 8px 0px 0px #183153',
+        'nav-card': '-3px 4px 0px 0px #183153',
       },
       height: {
         fullscreen: '100dvh',
@@ -31,6 +32,9 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      rotate: {
+        120: '120deg',
       },
     },
   },

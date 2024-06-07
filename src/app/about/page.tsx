@@ -5,6 +5,8 @@ import { twMerge } from 'tailwind-merge'
 import { techIcons } from '@/utils/constant/TechIcons'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import ExperienceTimeline from '@/components/common/ExperienceTimelime'
+import { experience } from '@/utils/constant/Experience'
 
 export default function About() {
   const fadeInAnimationVariants = {
@@ -24,9 +26,9 @@ export default function About() {
   return (
     <section className="text-black-primary">
       <TextSection text="it's More About Me." />
-      <div className="mx-auto mt-8 flex flex-col items-center justify-center md:gap-10 lg:flex-row">
-        <div className="shadow-image-card relative aspect-auto h-60 w-60 items-baseline justify-center rounded-3xl border-4 border-black-primary bg-yellow-primary object-cover shadow-black-primary md:h-96 md:w-1/2 xl:w-96">
-          <div className="shadow-image-card absolute right-0 flex h-12 w-16 translate-x-8 translate-y-6 items-center justify-center rounded-t-xl rounded-br-xl border-4 border-black-primary bg-orange-primary shadow-black-primary md:h-16 md:w-20">
+      <div className="mx-auto mb-12 mt-8 flex flex-col items-center justify-center md:gap-10 lg:flex-row">
+        <div className="relative aspect-auto h-60 w-60 items-baseline justify-center rounded-3xl border-4 border-black-primary bg-yellow-primary object-cover shadow-image-card shadow-black-primary md:h-96 md:w-1/2 xl:w-96">
+          <div className="absolute right-0 flex h-12 w-16 translate-x-8 translate-y-6 items-center justify-center rounded-t-xl rounded-br-xl border-4 border-black-primary bg-orange-primary shadow-image-card shadow-black-primary md:h-16 md:w-20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 md:h-12 md:w-12"
@@ -125,6 +127,15 @@ export default function About() {
           backend development. im also currently learning about <b>Kotlin</b>{' '}
           for android development
         </p>
+      </div>
+      <TextSection
+        text="My Experience And Education"
+        classNames="mb-10 text-center"
+      />
+      <div className="mx-auto mb-10 flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
+        {experience.map((data, index: number) => (
+          <ExperienceTimeline position={index % 2 == 1} key={index} {...data} />
+        ))}
       </div>
       <TextSection
         classNames="mt-10 xl:mt-28"

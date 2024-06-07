@@ -4,7 +4,12 @@ import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+import { animatePageOut } from '@/utils/animation/animatePage'
+import { useRouter } from 'next/navigation'
+
 export default function Home() {
+  const router = useRouter()
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -16,7 +21,7 @@ export default function Home() {
       }}
       className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-16 xl:items-start 2xl:mt-24"
     >
-      <h1 className="text-3xl font-bold md:text-6xl">Muhammad Radifa</h1>
+      <h1 id="scramble" className="text-3xl font-bold md:text-6xl"></h1>
       <h2 className="text-xl font-bold md:text-4xl">
         Hi, Folks{' '}
         <span className="hidden w-12 md:inline-block">
@@ -49,7 +54,7 @@ export default function Home() {
       </p>
       <div className="flex gap-4">
         <a
-          href="/cv.pdf"
+          onClick={() => animatePageOut('/cv.pdf', router)}
           className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary bg-yellow-primary p-2 shadow-button shadow-black-primary hover:bg-orange-primary md:p-4"
         >
           <svg
@@ -64,7 +69,7 @@ export default function Home() {
           </p>
         </a>
         <a
-          href="/about"
+          onClick={() => animatePageOut('/about', router)}
           className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary p-2 shadow-button shadow-black-primary hover:bg-blue-gray-50/20 md:p-4"
         >
           <svg
