@@ -1,43 +1,49 @@
-import { FaGithub, FaLinkedin, FaDiscord, FaTelegram } from 'react-icons/fa'
-import { RiTwitterXLine, RiInstagramLine } from 'react-icons/ri'
-import { MdMail } from 'react-icons/md'
+import {
+  Discord,
+  Github,
+  Instagram,
+  LinkedIn,
+  Mail,
+  Telegram,
+  Twitter,
+} from '@/components/common/Icons'
 
 export const logoLinks = [
   {
     name: 'Github',
     href: 'https://github.com/MuhammadRadifa',
-    icon: FaGithub,
+    icon: Github,
   },
   {
     name: 'Twitter',
     href: '',
-    icon: RiTwitterXLine,
+    icon: Twitter,
     content: '',
   },
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/radifa0_0/',
-    icon: RiInstagramLine,
+    icon: Instagram,
     content: 'Radifa0_0',
   },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/radifa/',
-    icon: FaLinkedin,
+    icon: LinkedIn,
   },
   {
     name: 'Gmail',
     href: '',
-    icon: MdMail,
+    icon: Mail,
   },
   {
     name: 'Discord',
     href: '',
-    icon: FaDiscord,
+    icon: Discord,
   },
   {
     name: 'Telegram',
     href: '',
-    icon: FaTelegram,
+    icon: Telegram,
   },
 ]

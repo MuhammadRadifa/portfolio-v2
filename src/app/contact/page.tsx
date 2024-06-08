@@ -1,5 +1,7 @@
+'use client'
 import TextSection from '@/components/common/TextSection'
 import { logoLinks } from '@/utils/constant/LogoLinks'
+import { motion } from 'framer-motion'
 
 export default function Contact() {
   return (
@@ -9,14 +11,17 @@ export default function Contact() {
         {logoLinks.map((data, index) => {
           const Icon = data.icon
           return (
-            <a
-              className="flex h-16 w-52 items-center gap-5 rounded-xl border-2 border-black-primary p-3 shadow-button-card transition-all duration-200 hover:scale-105"
+            <motion.a
+              whileInView={{ scale: 1 }}
+              initial={{ scale: 0 }}
+              transition={{ duration: 0.3 }}
+              className="flex h-16 w-52 items-center gap-5 rounded-xl border-2 border-black-primary bg-white p-3 shadow-button-card transition-all duration-200 hover:scale-105 hover:shadow-image-card"
               key={index}
               href={data.href}
             >
-              <Icon className="text-2xl" />
+              <Icon />
               <p className="font-semibold">{data.name}</p>
-            </a>
+            </motion.a>
           )
         })}
       </div>
