@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 import { animatePageOut } from '@/utils/animation/animatePage'
 import { useRouter } from 'next/navigation'
+import ScrambleText from '@/components/common/ScrambleText'
 
 export default function Home() {
   const router = useRouter()
@@ -22,6 +23,7 @@ export default function Home() {
       className="flex flex-col items-center gap-3 text-black-primary xl:ml-40 xl:mt-16 xl:items-start 2xl:mt-24"
     >
       <h1 id="scramble" className="text-3xl font-bold md:text-6xl"></h1>
+      <ScrambleText>Muhammad Radifa</ScrambleText>
       <h2 className="text-xl font-bold md:text-4xl">
         Hi, Folks{' '}
         <span className="hidden w-12 md:inline-block">
