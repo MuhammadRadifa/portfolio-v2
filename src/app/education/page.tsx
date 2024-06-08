@@ -42,7 +42,7 @@ export default function Education() {
   }
 
   return (
-    <div className="xl:px-64">
+    <div className="xl:px-40 2xl:px-64">
       <TextSection
         text="My Certification and Awards"
         classNames="mb-10 text-center"
