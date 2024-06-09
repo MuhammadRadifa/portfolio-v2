@@ -20,12 +20,12 @@ export default function Navbar() {
   const router = useRouter()
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Education', href: '/education' },
-    { name: 'Project', href: '/project' },
-    { name: 'Resume', href: '/cv.pdf' },
-    { name: 'Contact', href: '/contact' },
+    { name: '🚀 Home', href: '/' },
+    { name: '😎 About', href: '/about' },
+    { name: '🎓 Education', href: '/education' },
+    { name: '⚒️ Project', href: '/project' },
+    { name: '📑 Resume', href: '/cv.pdf' },
+    { name: '📲 Contact', href: '/contact' },
   ]
 
   const navigationRoutes = {
