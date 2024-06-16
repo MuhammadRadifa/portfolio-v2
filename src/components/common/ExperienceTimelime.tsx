@@ -30,6 +30,7 @@ export default function ExperienceTimeline({
         whileInView={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
         className={twMerge(
           'flex w-full flex-col gap-3 rounded-xl border-4 border-black-primary bg-white p-4 text-black shadow-button-card md:w-5/6',
           position
@@ -59,6 +60,7 @@ function DotTimeline({ type }: { type: string }) {
         whileInView={{ scale: 1 }}
         initial={{ scale: 0 }}
         transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
         className="absolute -left-4 top-1/2 -mt-10 flex h-14 w-14 rounded-full border-4 border-black-primary bg-yellow-primary md:-left-7 md:h-20 md:w-20"
       >
         {type === 'Work' ? (

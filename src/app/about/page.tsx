@@ -151,6 +151,7 @@ export default function About() {
               initial="hidden"
               whileInView="animate"
               variants={fadeInAnimationVariants}
+              viewport={{ once: true }}
               custom={index}
               className={twMerge(
                 `flex h-24 w-24 flex-col items-center justify-center gap-y-2 rounded-2xl border-2 bg-white duration-150 hover:scale-105 hover:border-black-primary hover:shadow-button-card md:h-36 md:w-36 md:p-4`,

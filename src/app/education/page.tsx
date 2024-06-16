@@ -57,6 +57,7 @@ export default function Education() {
                 whileInView={{ scale: 1 }}
                 initial={{ scale: 0 }}
                 transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
                 className="flex h-40 w-full max-w-[288px] cursor-pointer flex-col justify-between rounded-xl border-2 border-black-primary bg-white p-4 shadow-button-card transition-all hover:scale-105 xl:w-72"
               >
                 <div>
