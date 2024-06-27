@@ -25,7 +25,7 @@ export default function About() {
 
   return (
     <section className="text-black-primary">
-      <TextSection text="it's More About Me." />
+      <TextSection icon="😎" text="it's More About Me." />
       <div className="mx-auto mb-12 mt-8 flex flex-col items-center justify-center md:gap-10 lg:flex-row">
         <div className="relative aspect-auto h-60 w-60 items-baseline justify-center rounded-3xl border-4 border-black-primary bg-yellow-primary object-cover shadow-image-card shadow-black-primary md:h-96 md:w-1/2 xl:w-96">
           <div className="absolute right-0 flex h-12 w-16 translate-x-8 translate-y-6 items-center justify-center rounded-t-xl rounded-br-xl border-4 border-black-primary bg-orange-primary shadow-image-card shadow-black-primary md:h-16 md:w-20">
@@ -129,7 +129,8 @@ export default function About() {
         </p>
       </div>
       <TextSection
-        text="My Experience And Education"
+        icon="💼"
+        text="My Experience"
         classNames="mb-10 text-center"
       />
       <div className="mx-auto mb-10 flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
@@ -138,6 +139,7 @@ export default function About() {
         ))}
       </div>
       <TextSection
+        icon="🎯"
         classNames="mt-10 xl:mt-28"
         text="the Tech Stack That I Use."
       />
