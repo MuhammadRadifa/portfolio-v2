@@ -45,7 +45,7 @@ export default function Education() {
     <div className="xl:px-40 2xl:px-64">
       <TextSection
         icon="🎓"
-        text="My Certification and Awards"
+        text="My Education"
         classNames="mb-10 text-center"
       />
       <div className="flex flex-wrap items-center justify-center gap-5">

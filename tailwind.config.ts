@@ -10,6 +10,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        crack: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 0.3s ease-in-out',
+        crack: 'crack 0.5s ease-in-out',
+      },
       colors: {
         background: '#0F182B',
         'primary-text': '#E2E8F0',
