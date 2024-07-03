@@ -17,6 +17,9 @@ body {
   background-position:
     0 0,
     22px 22px; */
+  cursor:
+    url('/cursor.png') 16 16,
+    auto !important;
 }
 
 body::before {

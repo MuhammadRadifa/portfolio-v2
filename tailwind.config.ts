@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      cursor: {
+        pointer: 'url(/32.png), pointer', // Custom cursor with pointer
+        default: 'url(/32.png), default', // Custom cursor with default
+        hand: 'url(/hand.png), pointer', // Custom cursor with hand
+        // Add more custom cursors if needed
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
