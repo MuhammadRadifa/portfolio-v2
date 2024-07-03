@@ -25,7 +25,7 @@ export default function Project() {
       <div>
         <div className="my-4 flex justify-center gap-4 font-semibold text-[#616D8A] sm:gap-6 md:gap-8 lg:gap-4">
           <button
-            className={`group relative flex flex-col items-start justify-center`}
+            className={`group relative flex cursor-pointer flex-col items-start justify-center`}
             onClick={() => setFilter('all')}
           >
             <span
@@ -42,7 +42,7 @@ export default function Project() {
             </p>
           </button>
           <button
-            className={`group relative flex flex-col items-start justify-center`}
+            className={`group relative flex cursor-pointer flex-col items-start justify-center`}
             onClick={() => setFilter('web')}
           >
             <span
@@ -62,7 +62,7 @@ export default function Project() {
             </p>
           </button>
           <button
-            className={`group relative flex flex-col items-start justify-center`}
+            className={`group relative flex cursor-pointer flex-col items-start justify-center`}
             onClick={() => setFilter('mobile')}
           >
             <span
@@ -81,7 +81,7 @@ export default function Project() {
             </p>
           </button>
           <button
-            className={`group relative flex flex-col items-start justify-center`}
+            className={`group relative flex cursor-pointer flex-col items-start justify-center`}
             onClick={() => setFilter('api')}
           >
             <span

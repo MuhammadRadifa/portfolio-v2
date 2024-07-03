@@ -16,7 +16,7 @@ export default function Contact() {
               initial={{ scale: 0 }}
               transition={{ duration: 0.3 }}
               viewport={{ once: true }}
-              className="flex h-16 w-52 items-center gap-5 rounded-xl border-2 border-black-primary bg-white p-3 shadow-button-card transition-all duration-200 hover:scale-105 hover:shadow-image-card"
+              className="flex h-16 w-52 cursor-pointer items-center gap-5 rounded-xl border-2 border-black-primary bg-white p-3 shadow-button-card transition-all duration-200 hover:scale-105 hover:shadow-image-card"
               key={index}
               href={data.href}
             >
