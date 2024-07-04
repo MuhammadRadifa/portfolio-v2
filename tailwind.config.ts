@@ -30,6 +30,7 @@ const config: Config = {
       animation: {
         wiggle: 'wiggle 0.3s ease-in-out',
         crack: 'crack 0.5s ease-in-out',
+        spin: 'spin 10s linear infinite',
       },
       colors: {
         background: '#0F182B',

@@ -68,7 +68,7 @@ export default function Education() {
                   <p>{company}</p>
                 </div>
                 <div className="flex justify-between gap-2">
-                  <p className="flex h-fit items-center justify-center rounded-xl bg-blue-gray-50 p-2 text-center text-xs font-semibold">
+                  <p className="flex h-fit items-center justify-center rounded-xl bg-blue-gray-50 p-2 text-center text-xs font-semibold text-black-primary">
                     {type}
                   </p>
                   <div className="flex gap-2">

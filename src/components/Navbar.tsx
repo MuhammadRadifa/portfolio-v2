@@ -24,14 +24,15 @@ export default function Navbar() {
     { name: '😎 About', href: '/about' },
     { name: '🎓 Education', href: '/education' },
     { name: '⚒️ Project', href: '/project' },
-    { name: '📑 Resume', href: '/cv.pdf' },
+    { name: '📑 Resume', href: '/resume' },
     { name: '📲 Contact', href: '/contact' },
   ]
 
   const navigationRoutes = {
     '/about': '/education',
     '/education': '/project',
-    '/project': '/cv.pdf',
+    '/project': '/resume',
+    '/resume': '/contact',
   }
 
   const [navBg, setNavBg] = useState(false)
@@ -50,7 +51,7 @@ export default function Navbar() {
   return (
     <nav
       className={twMerge(
-        `sticky top-0 z-10 flex items-center justify-end bg-transparent px-5 py-3 text-[#616D8A] duration-200 md:px-10 md:py-5`,
+        `sticky top-0 z-10 flex items-center justify-end bg-transparent px-5 py-3 text-[#616D8A] duration-200 dark:text-white md:px-10 md:py-5`,
         navBg && 'md:justify-center md:py-2',
       )}
     >

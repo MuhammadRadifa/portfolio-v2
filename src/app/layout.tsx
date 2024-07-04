@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import { Settings } from '@/components/common/Settings'
+import { ThemeProvider } from '@/provider/themesProvider'
 
 export const metadata: Metadata = {
   title: 'Radifa | Portfolio',
@@ -15,9 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden">
-        <Navbar />
-        <main className="mb-10 p-5 md:p-8">{children}</main>
-        {/* <Footer /> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="mb-10 p-5 md:p-8">{children}</main>
+          {/* <Footer /> */}
+          <Settings />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -121,7 +121,7 @@ export default function Home() {
           dragConstraints={constraintsRef}
           src={getImage(isCrack)}
           className={cn(
-            'hidden aspect-square rounded-xl shadow-2xl shadow-white md:block xl:mt-16 xl:items-start',
+            'hidden aspect-square rounded-xl md:block xl:mt-16 xl:items-start',
             animate ? (isCrack < 10 ? 'animate-wiggle' : '') : '',
           )}
           alt="profile"

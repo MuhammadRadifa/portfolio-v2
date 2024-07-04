@@ -23,7 +23,7 @@ export default function Project() {
     <div className="">
       <TextSection icon="⚒️" text="it's My Projects." />
       <div>
-        <div className="my-4 flex justify-center gap-4 font-semibold text-[#616D8A] sm:gap-6 md:gap-8 lg:gap-4">
+        <div className="my-4 flex justify-center gap-4 font-semibold text-[#616D8A] dark:text-white sm:gap-6 md:gap-8 lg:gap-4">
           <button
             className={`group relative flex cursor-pointer flex-col items-start justify-center`}
             onClick={() => setFilter('all')}
