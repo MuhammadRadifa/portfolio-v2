@@ -51,13 +51,13 @@ export default function Home() {
       >
         <h1 id="scramble" className="text-3xl font-bold md:text-6xl"></h1>
         <ScrambleText>Muhammad Radifa</ScrambleText>
-        <h2 className="text-xl font-bold md:text-4xl">
+        <h2 className="text-xl font-bold dark:text-white md:text-4xl">
           Hi, Folks{' '}
           <span className="hidden w-12 md:inline-block">
             <Image src={'/wave.gif'} alt="welcome" width={100} height={100} />
           </span>{' '}
         </h2>
-        <h2 className="text-xl font-bold md:text-3xl">
+        <h2 className="text-xl font-bold dark:text-white md:text-3xl">
           I&apos;m{' '}
           <TypeAnimation
             sequence={[
@@ -76,14 +76,14 @@ export default function Home() {
             className="text-orange-primary"
           />
         </h2>
-        <p className="max-w-lg text-center text-sm md:max-w-2xl md:text-left md:text-base">
+        <p className="max-w-lg text-center text-sm dark:text-white md:max-w-2xl md:text-left md:text-base">
           I am a <b>Fullstack Developer</b> from Indonesia, I have a strong
           understanding of programming languages and have experience in{' '}
           <b>Mobile And Web Developer</b> projects.
         </p>
         <div className="flex gap-4">
           <a
-            onClick={() => animatePageOut('/cv.pdf', router)}
+            onClick={() => animatePageOut('/resume', router)}
             className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary bg-yellow-primary p-2 shadow-button shadow-black-primary hover:bg-orange-primary md:p-4"
           >
             <svg
@@ -99,7 +99,7 @@ export default function Home() {
           </a>
           <a
             onClick={() => animatePageOut('/about', router)}
-            className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary p-2 shadow-button shadow-black-primary hover:bg-blue-gray-50/20 md:p-4"
+            className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary bg-white p-2 shadow-button shadow-black-primary hover:bg-blue-gray-50/20 md:p-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

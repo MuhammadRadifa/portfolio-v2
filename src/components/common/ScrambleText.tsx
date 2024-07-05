@@ -64,7 +64,7 @@ const ScrambleText: React.FC<Props> = ({ children }) => {
       }}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      className="cursor-pointer text-3xl font-bold md:text-6xl"
+      className="cursor-pointer text-3xl font-bold dark:text-white md:text-6xl"
     >
       {text}
     </motion.h1>

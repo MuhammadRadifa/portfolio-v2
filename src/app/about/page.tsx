@@ -141,7 +141,7 @@ export default function About() {
       <TextSection
         icon="🎯"
         classNames="mt-10 xl:mt-28"
-        text="the Tech Stack That I Use."
+        text="Tech Stack That I Use."
       />
       <div className="mt-5 flex flex-wrap justify-center justify-items-center gap-5 xl:gap-10 xl:px-40">
         {/* <TechTabs /> */}
