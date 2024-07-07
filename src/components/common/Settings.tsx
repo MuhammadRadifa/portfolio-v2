@@ -10,10 +10,12 @@ import { useEffect, useRef, useState } from 'react'
 import { ThemeButton } from './ThemeButton'
 import { useTheme } from 'next-themes'
 import { AudioPlayer } from './AudioPlayer'
+import Pets from './Pets'
+import { ButtonPets } from './buttonPets'
 
 export function Settings() {
   const { theme, setTheme } = useTheme()
-
+  const [petEnable, setPetEnable] = useState(true)
   const [isPlaying, setIsPlaying] = useState(false)
   const [volume, setVolume] = useState(0.05)
   const audioRef: any = useRef(null)
@@ -40,11 +42,11 @@ export function Settings() {
   const toggle = () => setIsPlaying(!isPlaying)
 
   return (
-    <div className="fixed bottom-6 left-6 hidden items-center space-x-5 md:flex">
+    <div className="fixed bottom-6 left-6 hidden w-full items-center space-x-5 md:flex">
       {/* <div>
         
       </div> */}
-      <SpeedDial>
+      <SpeedDial className="z-10">
         <SpeedDialHandler>
           <button className="h-16 w-16 cursor-pointer rounded-full border-4 border-black-primary bg-yellow-primary duration-150 hover:-rotate-90 md:right-16 md:block">
             <svg
@@ -65,9 +67,16 @@ export function Settings() {
           >
             <ThemeButton theme={theme ? theme : 'light'} />
           </SpeedDialAction>
-
           <SpeedDialAction className="h-16 w-16 cursor-pointer rounded-full border-4 border-black-primary bg-yellow-primary duration-150 hover:bg-orange-primary md:right-16 md:block">
             <AudioPlayer isPlaying={isPlaying} toggle={toggle} />
+          </SpeedDialAction>
+          <SpeedDialAction
+            onClick={() => {
+              setPetEnable(!petEnable)
+            }}
+            className="h-16 w-16 cursor-pointer rounded-full border-4 border-black-primary bg-yellow-primary duration-150 hover:bg-orange-primary md:right-16 md:block"
+          >
+            <ButtonPets isEnable={petEnable} />
           </SpeedDialAction>
         </SpeedDialContent>
       </SpeedDial>
@@ -93,6 +102,7 @@ export function Settings() {
           />
         </div>
       )}
+      {petEnable && <Pets />}
     </div>
   )
 }

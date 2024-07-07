@@ -26,11 +26,48 @@ const config: Config = {
           '50%': { transform: 'scale(1.1)' },
           '100%': { transform: 'scale(1)' },
         },
+        'walk-chicken': {
+          '0%, 100%': { transform: 'translateX(0%)' },
+          '50%': { transform: 'translateX(90%)' },
+        },
+        'walk-cat': {
+          '0%, 100%': { transform: 'translateX(90%)' },
+          '50%': { transform: 'translateX(0%)' },
+        },
+        'run-dog': {
+          '0%, 100%': { transform: 'translateX(90%)' },
+          '50%': { transform: 'translateX(5%)' },
+        },
+        'walk-dog': {
+          '0%, 100%': { transform: 'translateX(30%)' },
+          '50%': { transform: 'translateX(90%)' },
+        },
+        'walk-snail': {
+          '0%, 100%': { transform: 'translateX(0%)' },
+          '50%': { transform: 'translateX(90%)' },
+        },
+        flip: {
+          '0%, 100%': { transform: 'scaleX(1)' },
+          '50%': { transform: 'scaleX(-1)' },
+        },
+        'flip-reverse': {
+          '0%, 100%': { transform: 'scaleX(-1)' },
+          '50%': { transform: 'scaleX(1)' },
+        },
       },
       animation: {
         wiggle: 'wiggle 0.3s ease-in-out',
         crack: 'crack 0.5s ease-in-out',
         spin: 'spin 10s linear infinite',
+        'walk-chicken': 'walk-chicken 100s linear infinite',
+        'walk-cat': 'walk-cat 80s linear infinite',
+        'walk-snail': 'walk-snail 500s linear infinite',
+        'run-dog': 'run-dog 60s linear infinite',
+        'walk-dog': 'walk-dog 100s linear infinite reverse',
+        'flip-chicken': 'flip 100s step-end infinite',
+        'flip-snail': 'flip 500s step-end infinite',
+        'flip-dog-reverse': 'flip-reverse 60s step-end infinite',
+        'flip-dog': 'flip 100s step-end infinite',
       },
       colors: {
         background: '#0F182B',
