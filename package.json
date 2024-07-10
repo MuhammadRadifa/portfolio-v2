@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.5",
+    "@tawk.to/tawk-messenger-react": "^2.0.2",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.3",

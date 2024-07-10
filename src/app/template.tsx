@@ -8,7 +8,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     animatePageIn()
   }, [])
   return (
-    <div className="z-50">
+    <div className="z-[200001]">
       <div
         id="banner-1"
         className="fixed left-0 top-0 z-10 flex min-h-screen w-1/4 items-center justify-center bg-yellow-primary shadow-button shadow-background"
