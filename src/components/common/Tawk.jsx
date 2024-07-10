@@ -1,10 +1,9 @@
 'use client'
 
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
-import { CSSProperties } from 'react'
 
 export default function Tawk() {
-  const style: CSSProperties = {
+  const style = {
     zIndex: 50,
   }
   return (
