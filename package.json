@@ -19,6 +19,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-github-calendar": "^4.1.6",
     "react-icons": "^4.12.0",
     "react-loading-skeleton": "^3.4.0",
     "react-simple-image-viewer": "^1.2.2",
