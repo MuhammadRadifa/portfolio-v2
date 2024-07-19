@@ -28,7 +28,7 @@ export default function RootLayout({
           <main className="mb-10 p-5 md:p-8">{children}</main>
           {/* <Footer /> */}
           <Settings />
-          <Tawk />
+          {/* <Tawk /> */}
         </ThemeProvider>
       </body>
     </html>
