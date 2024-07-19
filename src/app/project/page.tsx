@@ -9,6 +9,7 @@ import { fetcher } from '@/utils/service/Fetcher'
 import { IProject } from '@/utils/interface/Project'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { GithubStats } from '@/components/common/GithubStats'
 
 export default function Project() {
   const [filter, setFilter] = useState('all')
@@ -23,6 +24,9 @@ export default function Project() {
     <div className="">
       <TextSection icon="⚒️" text="it's My Projects." />
       <div>
+        <div className="my-10 hidden justify-center md:flex">
+          <GithubStats />
+        </div>
         <div className="my-4 flex justify-center gap-4 font-semibold text-[#616D8A] dark:text-white sm:gap-6 md:gap-8 lg:gap-4">
           <button
             className={`group relative flex cursor-pointer flex-col items-start justify-center`}
