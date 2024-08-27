@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import ExperienceTimeline from '@/components/common/ExperienceTimelime'
 import { experience } from '@/utils/constant/Experience'
+import { LinkPreview } from '@/components/common/LinkPreview'
 
 export default function About() {
   const fadeInAnimationVariants = {

@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '/thumbnail',
       },
+      {
+        protocol: 'https',
+        hostname: '"api.microlink.io"',
+        port: '',
+        pathname: '/',
+      },
     ],
   },
 }
