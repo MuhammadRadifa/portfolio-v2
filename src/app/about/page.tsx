@@ -1,15 +1,24 @@
 'use client'
 
-import TextSection from '@/components/common/TextSection'
-import { twMerge } from 'tailwind-merge'
-import { techIcons } from '@/utils/constant/TechIcons'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import ExperienceTimeline from '@/components/common/ExperienceTimelime'
-import { experience } from '@/utils/constant/Experience'
-import { LinkPreview } from '@/components/common/LinkPreview'
+import ExperienceTimeline from '@/components/common/ExperienceTimelime';
+import TextSection from '@/components/common/TextSection';
+import { techIcons } from '@/utils/constant/TechIcons';
+import { IExperience } from '@/utils/interface/Experience';
+import { fetcher } from '@/utils/service/Fetcher';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import useSWR from 'swr';
+import { twMerge } from 'tailwind-merge';
 
 export default function About() {
+  const { data, isLoading, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL as string}/experience`,
+    fetcher,
+    { revalidateOnFocus: false, revalidateOnReconnect: false },
+  )
+
   const fadeInAnimationVariants = {
     hidden: {
       opacity: 0,
@@ -135,9 +144,30 @@ export default function About() {
         classNames="mb-10 text-center"
       />
       <div className="mx-auto mb-10 flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
-        {experience.map((data, index: number) => (
-          <ExperienceTimeline position={index % 2 == 1} key={index} {...data} />
-        ))}
+        {!isLoading &&
+          !error &&
+          data?.data
+            ?.map((item: IExperience, index: number) => (
+              <ExperienceTimeline
+                position={index % 2 == 1}
+                key={index}
+                {...item}
+              />
+            ))
+            .reverse()}
+        {isLoading && (
+          <div className="col-span-9 flex w-full justify-center">
+            <Skeleton
+              height={180}
+              width={320}
+              count={3}
+              containerClassName="flex gap-4 flex-col items-center justify-center w-full"
+            />
+          </div>
+        )}
+        {error && (
+          <p className="col-span-9 text-center text-black">Error ...</p>
+        )}
       </div>
       <TextSection
         icon="🎯"

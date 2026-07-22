@@ -7,7 +7,7 @@ export default function Resume() {
       <div className="mt-5 flex w-full flex-col items-end md:mt-10 xl:w-[810px]">
         <div className="flex gap-3">
           <a
-            href="/cv.pdf"
+            href="/resume/download"
             download
             className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary bg-yellow-primary p-1 text-black-primary shadow-button shadow-black-primary hover:bg-orange-primary md:p-4"
           >
@@ -61,7 +61,7 @@ export default function Resume() {
             </p>
           </a>
           <a
-            href="/cv.pdf"
+            href={process.env.NEXT_PUBLIC_RESUME_URL}
             className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black-primary bg-white p-1 shadow-button shadow-black-primary hover:bg-primary-text md:p-4"
           >
             <svg
@@ -74,7 +74,7 @@ export default function Resume() {
           </a>
         </div>
         <iframe
-          src="/cv.pdf#toolbar=0"
+          src={process.env.NEXT_PUBLIC_RESUME_URL + '#toolbar=0'}
           className="mt-4 h-[800px] w-full overflow-hidden xl:h-[1135px]"
         />
       </div>

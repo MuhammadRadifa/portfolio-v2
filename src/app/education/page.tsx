@@ -41,6 +41,11 @@ export default function Education() {
     window.open(href, '_blank')
   }
 
+  const getImageSrc = (image: string) =>
+    image.startsWith('http')
+      ? image
+      : `https://drive.google.com/thumbnail?id=${image}&sz=w3000`
+
   return (
     <div className="xl:px-40 2xl:px-64">
       <TextSection
@@ -104,10 +109,7 @@ export default function Education() {
 
       {isViewerOpen && !isLoading && !error && (
         <ImageViewer
-          src={data.data.map(
-            (item: any) =>
-              `https://drive.google.com/thumbnail?id=${item.image}&sz=w3000`,
-          )}
+          src={data.data.map((item: ICertificate) => getImageSrc(item.image))}
           currentIndex={currentImage}
           onClose={closeImageViewer}
           backgroundStyle={{
