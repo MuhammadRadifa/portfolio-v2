@@ -1,12 +1,11 @@
 'use client'
 
-import { fetcher } from '@/utils/service/Fetcher'
-import { useEffect } from 'react'
-import { FaCodeFork, FaGithub } from 'react-icons/fa6'
-import { GoStarFill } from 'react-icons/go'
-import Skeleton from 'react-loading-skeleton'
-import useSWR from 'swr'
-import AnimatedCounter from './AnimatedCounter'
+import { fetcher } from '@/utils/service/Fetcher';
+import { FaCodeFork, FaGithub } from 'react-icons/fa6';
+import { GoStarFill } from 'react-icons/go';
+import Skeleton from 'react-loading-skeleton';
+import useSWR from 'swr';
+import AnimatedCounter from './AnimatedCounter';
 
 export default function GithubStar() {
   const { data, isLoading, error } = useSWR(
@@ -24,14 +23,14 @@ export default function GithubStar() {
       <a
         href="https://github.com/MuhammadRadifa/portfolio-v2"
         target="_blank"
-        className="flex h-14 w-44 cursor-pointer flex-row rounded-lg border-4 border-black-primary bg-white shadow-image-card duration-150 md:right-16"
+        className="flex h-14 w-44 cursor-pointer flex-row rounded-lg border-4 border-black-primary bg-white text-black-primary shadow-image-card duration-150 dark:bg-black dark:text-white md:right-16"
       >
         <FaGithub className="m-2 text-3xl" />
         <div>
           <p className="text-md font-bold">Portfolio-v2</p>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
-              <GoStarFill className="text-xs text-black-primary" />
+              <GoStarFill className="text-xs text-black-primary dark:text-yellow-primary" />
               <span className="text-xs font-bold">
                 <AnimatedCounter from={0} to={data.stargazers_count} />
               </span>
