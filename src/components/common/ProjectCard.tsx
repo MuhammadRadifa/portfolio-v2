@@ -12,6 +12,10 @@ export default function ProjectCard({
   demo,
   type,
 }: any) {
+  const imageSrc = image?.startsWith('http')
+    ? image
+    : `https://drive.google.com/thumbnail?id=${image}&sz=w3000`
+
   return (
     <motion.div
       whileInView={{ scale: 1 }}
@@ -21,7 +25,7 @@ export default function ProjectCard({
       className="dark:border-dark-secondary group relative h-36 w-[280px] cursor-pointer overflow-hidden rounded-lg  border-2 border-black-primary object-cover shadow-button-card sm:w-[360px] lg:h-44"
     >
       <Image
-        src={`https://drive.google.com/thumbnail?id=${image}&sz=w3000`}
+        src={imageSrc}
         width={1000}
         height={1000}
         className="h-full w-full object-cover"

@@ -3,6 +3,7 @@
 import { twMerge } from 'tailwind-merge'
 import { motion } from 'framer-motion'
 import { LinkPreview } from './LinkPreview'
+import { IExperience } from '@/utils/interface/Experience'
 
 export default function ExperienceTimeline({
   position,
@@ -11,15 +12,9 @@ export default function ExperienceTimeline({
   title,
   date,
   description,
-  url,
-}: {
+  uri,
+}: IExperience & {
   position: boolean
-  type: string
-  company: string
-  title: string
-  date: string
-  description: string
-  url: string
 }) {
   return (
     <motion.div
@@ -28,7 +23,7 @@ export default function ExperienceTimeline({
         position && 'flex-row-reverse',
       )}
     >
-      {!position && <DotTimeline type={type} url={url} />}
+      {!position && <DotTimeline type={type} url={uri} />}
       <motion.div
         whileInView={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0 }}
@@ -48,12 +43,12 @@ export default function ExperienceTimeline({
         </p>
         <p className="md:text-lg">{date}</p>
       </motion.div>
-      {position && <DotTimeline type={type} url={url} />}
+      {position && <DotTimeline type={type} url={uri} />}
     </motion.div>
   )
 }
 
-function DotTimeline({ type, url }: { type: string; url: string }) {
+function DotTimeline({ type, url }: { type: IExperience['type']; url: string }) {
   return (
     <div className="relative col-start-5 col-end-6 mr-6 md:mx-auto md:mr-10">
       <div className="flex h-full w-6 items-center justify-center">
@@ -67,7 +62,7 @@ function DotTimeline({ type, url }: { type: string; url: string }) {
           viewport={{ once: true }}
           className="absolute -left-4 top-1/2 -mt-10 flex h-14 w-14 rounded-full border-4 border-black-primary bg-yellow-primary md:-left-7 md:h-20 md:w-20"
         >
-          {type === 'Work' ? (
+          {type.toLowerCase() === 'work' ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="p-3 md:p-5"
