@@ -1,15 +1,31 @@
 'use client'
 
-import ProjectCard from '@/components/common/ProjectCard'
-import TextSection from '@/components/common/TextSection'
+import ProjectCard from '@/components/common/ProjectCard';
+import TextSection from '@/components/common/TextSection';
 
-import { useState } from 'react'
-import useSWR from 'swr'
-import { fetcher } from '@/utils/service/Fetcher'
-import { IProject } from '@/utils/interface/Project'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-import { GithubStats } from '@/components/common/GithubStats'
+import { GithubStats } from '@/components/common/GithubStats';
+import { IProject } from '@/utils/interface/Project';
+import { fetcher } from '@/utils/service/Fetcher';
+import Image from 'next/image';
+import { useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import useSWR from 'swr';
+
+const githubStatCards = [
+  {
+    src: 'https://camo.githubusercontent.com/1fc8684eb3fd039cc1942ec69e165de56117351c6fe7da6ebafbe1314b6e41d7/68747470733a2f2f6769746875622d726561646d652d73746174732d7369676d612d666976652e76657263656c2e6170702f6170693f757365726e616d653d6d7568616d6d616452616469666126686964655f7469746c653d66616c736526686964655f72616e6b3d66616c73652673686f775f69636f6e733d7472756526696e636c7564655f616c6c5f636f6d6d6974733d7472756526636f756e745f707269766174653d747275652664697361626c655f616e696d6174696f6e733d66616c7365267468656d653d64726163756c61266c6f63616c653d656e26686964655f626f726465723d66616c7365266f726465723d31',
+    alt: 'Muhammad Radifa GitHub stats',
+  },
+  {
+    src: 'https://camo.githubusercontent.com/37898549714c4eb8f92e19fc43e2836119df8d251c73ac2c76f06e7ac6b74b11/68747470733a2f2f6769746875622d726561646d652d73746174732d7369676d612d666976652e76657263656c2e6170702f6170692f746f702d6c616e67733f757365726e616d653d6d7568616d6d6164526164696661266c6f63616c653d656e26686964655f7469746c653d66616c7365266c61796f75743d636f6d7061637426636172645f77696474683d333230266c616e67735f636f756e743d35267468656d653d64726163756c6126686964655f626f726465723d66616c7365266f726465723d32',
+    alt: 'Muhammad Radifa top languages',
+  },
+  {
+    src: 'https://camo.githubusercontent.com/f1c3dc250594a4d2128ea4f9bc12c56bebb32ffaf5faead203df229c87d18f56/68747470733a2f2f73747265616b2d73746174732e64656d6f6c61622e636f6d3f757365723d6d7568616d6d6164526164696661266c6f63616c653d656e266d6f64653d6461696c79267468656d653d64726163756c6126686964655f626f726465723d66616c736526626f726465725f7261646975733d35266f726465723d33',
+    alt: 'Muhammad Radifa GitHub streak stats',
+  },
+]
 
 export default function Project() {
   const [filter, setFilter] = useState('all')
@@ -26,6 +42,23 @@ export default function Project() {
       <div>
         <div className="my-10 hidden justify-center md:flex">
           <GithubStats />
+        </div>
+        <div className="my-10 flex flex-wrap items-center justify-center gap-4 lg:gap-6">
+          {githubStatCards.map((card) => (
+            <div
+              key={card.src}
+              className="cursor-pointer rounded-lg border-4 border-black-primary bg-white p-1 shadow-image-card duration-150 hover:shadow-button-card hover:shadow-black-primary dark:bg-black sm:p-1.5"
+            >
+              <Image
+                src={card.src}
+                alt={card.alt}
+                width={10}
+                height={10}
+                unoptimized
+                className="h-auto w-full max-w-[250px] rounded-md sm:max-w-[326px]"
+              />
+            </div>
+          ))}
         </div>
         <div className="my-4 flex justify-center gap-4 font-semibold text-[#616D8A] dark:text-white sm:gap-6 md:gap-8 lg:gap-4">
           <button
